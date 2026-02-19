@@ -10,7 +10,7 @@
 <atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Final Project for EDLD 652</description>
 <generator>quarto-1.8.25</generator>
-<lastBuildDate>Sun, 15 Feb 2026 08:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 18 Feb 2026 08:00:00 GMT</lastBuildDate>
 <item>
   <title>First Steps: Starting a Visualization Project</title>
   <dc:creator>Steven Todd McIntyre II</dc:creator>
@@ -44,6 +44,7 @@
 <ul>
 <li>I created this blog!</li>
 <li>I cleaned and uploaded data from the <a href="https://urbaninstitute.github.io/nccs/datasets/bmf/">Business Master File (BMF)</a>, including only data with an A25 (Arts Education) NTEE (National Taxonomy of Exempt Entities) code.</li>
+<li>I made a pretty bad visualization in order to test embed-resources</li>
 </ul>
 
 
@@ -52,7 +53,7 @@
 
  ]]></description>
   <guid>https://your-website-url.example.com/posts/first-post-and-actions/</guid>
-  <pubDate>Sun, 15 Feb 2026 08:00:00 GMT</pubDate>
+  <pubDate>Wed, 18 Feb 2026 08:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

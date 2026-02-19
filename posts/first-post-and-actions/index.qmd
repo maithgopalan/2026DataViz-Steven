@@ -1,7 +1,7 @@
 ---
 title: "First Steps: Starting a Visualization Project"
 author: "Steven Todd McIntyre II"
-date: "2026-02-15"
+date: "2026-02-18"
 runtime: shiny
 format: 
   html: 
@@ -47,4 +47,5 @@ Today, I took the following steps:
 
 -   I created this blog!
 -   I cleaned and uploaded data from the [Business Master File (BMF)](https://urbaninstitute.github.io/nccs/datasets/bmf/), including only data with an A25 (Arts Education) NTEE (National Taxonomy of Exempt Entities) code.
+-   I made a pretty bad visualization in order to test embed-resources
 
