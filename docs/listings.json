@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/a25-word-count/index.html",
       "/posts/first-post-and-actions/index.html"
     ]
   }

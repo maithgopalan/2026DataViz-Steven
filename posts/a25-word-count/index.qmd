@@ -1,0 +1,68 @@
+---
+title: "Bar Graph 1: Landscape of Arts Education Nonprofits"
+author: "Steven Todd McIntyre II"
+date: "2026-02-22"
+runtime: shiny
+format: 
+  dashboard:
+    embed-resources: true
+    theme: minty
+    output:
+      orientation: columns
+execute:
+  warning: false
+  message: false
+  echo: false
+---
+
+```{r}
+library(tidyverse)
+library(tidytext)
+library(here)
+library(knitr)
+library(shiny)
+library(rio)
+```
+
+# Visualization
+
+
+```{r}
+a25 <- import(here("data/BMF_A25.csv"))
+
+a25 |>
+  unnest_tokens(output = words, input = ORG_NAME_CURRENT) |>
+  select(words) |>
+  filter(!words %in% stop_words$word) |>
+  count(words) |>
+  mutate(words = fct_lump_n(words, n=50, w=n)) |>
+  filter(words != "Other") |>
+  group_by(words) |>
+  summarize(n = sum(n)) |>
+  mutate(words=fct_reorder(words, n)) |>
+  ggplot(aes(n, words)) +
+  geom_col() +
+  labs(
+    title = "Top 50 Words in A25 \"Arts Education\" Organization Names",
+    x = "Instances in A25 Organization Names",
+    y = ""
+  ) +
+  theme(
+    axis.text.y = element_text(size = 4)
+  )
+
+```
+
+# Summary of Updates
+
+## Column
+
+Removing the relatively poor visualization that was mostly intended to test embed-resources, I've now added a visualization that will be, in some form, in my final project.
+
+Welcome!
+
+Today, I took the following steps:
+
+-   I created this blog!
+-   I cleaned and uploaded data from the [Business Master File (BMF)](https://urbaninstitute.github.io/nccs/datasets/bmf/), including only data with an A25 (Arts Education) NTEE (National Taxonomy of Exempt Entities) code.
+-   I made a pretty bad visualization in order to test embed-resources

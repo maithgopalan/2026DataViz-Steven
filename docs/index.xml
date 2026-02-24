@@ -10,7 +10,50 @@
 <atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Final Project for EDLD 652</description>
 <generator>quarto-1.8.25</generator>
-<lastBuildDate>Wed, 18 Feb 2026 08:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 22 Feb 2026 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>Bar Graph 1: Landscape of Arts Education Nonprofits</title>
+  <dc:creator>Steven Todd McIntyre II</dc:creator>
+  <link>https://your-website-url.example.com/posts/a25-word-count/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="visualization" class="level1">
+<h1>Visualization</h1>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://your-website-url.example.com/posts/a25-word-count/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="summary-of-updates" class="level1">
+<h1>Summary of Updates</h1>
+<section id="column" class="level2">
+<h2 class="anchored" data-anchor-id="column">Column</h2>
+<p>Removing the relatively poor visualization that was mostly intended to test embed-resources, I’ve now added a visualization that will be, in some form, in my final project.</p>
+<p>Welcome!</p>
+<p>Today, I took the following steps:</p>
+<ul>
+<li>I created this blog!</li>
+<li>I cleaned and uploaded data from the <a href="https://urbaninstitute.github.io/nccs/datasets/bmf/">Business Master File (BMF)</a>, including only data with an A25 (Arts Education) NTEE (National Taxonomy of Exempt Entities) code.</li>
+<li>I made a pretty bad visualization in order to test embed-resources</li>
+</ul>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <guid>https://your-website-url.example.com/posts/a25-word-count/</guid>
+  <pubDate>Sun, 22 Feb 2026 08:00:00 GMT</pubDate>
+</item>
 <item>
   <title></title>
   <dc:creator>Steven Todd McIntyre II</dc:creator>

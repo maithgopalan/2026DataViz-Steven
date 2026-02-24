@@ -1,0 +1,17 @@
+{
+  "hash": "9ae944ed25a0d00d9fe1d41247852a98",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Bar Graph 1: Landscape of Arts Education Nonprofits\"\nauthor: \"Steven Todd McIntyre II\"\ndate: \"2026-02-22\"\nruntime: shiny\nformat: \n  dashboard:\n    embed-resources: true\n    theme: minty\n    output:\n      orientation: columns\nexecute:\n  warning: false\n  message: false\n  echo: false\n---\n\n\n::: {.cell}\n\n:::\n\n\n# Visualization\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n\n# Summary of Updates\n\n## Column\n\nRemoving the relatively poor visualization that was mostly intended to test embed-resources, I've now added a visualization that will be, in some form, in my final project.\n\nWelcome!\n\nToday, I took the following steps:\n\n-   I created this blog!\n-   I cleaned and uploaded data from the [Business Master File (BMF)](https://urbaninstitute.github.io/nccs/datasets/bmf/), including only data with an A25 (Arts Education) NTEE (National Taxonomy of Exempt Entities) code.\n-   I made a pretty bad visualization in order to test embed-resources\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

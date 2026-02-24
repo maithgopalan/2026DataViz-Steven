@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Exploring Arts Education Nonprofits in the USA",
     "section": "",
-    "text": "First Steps: Starting a Visualization Project\n\n\n\n\n\n\n\n\nFeb 18, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\nNo matching items"
+    "text": "Bar Graph 1: Landscape of Arts Education Nonprofits\n\n\n\n\n\n\n\n\nFeb 22, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Steps: Starting a Visualization Project\n\n\n\n\n\n\n\n\nFeb 18, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -40,5 +40,12 @@
     "title": "First Steps: Starting a Visualization Project",
     "section": "Column",
     "text": "Column\nThis is the first post in my final project’s Quarto blog, which documents the progress of my Arts Education Nonprofit Exploration digital dashboard. Each post will show iterations on my process.\nWelcome!\nToday, I took the following steps:\n\nI created this blog!\nI cleaned and uploaded data from the Business Master File (BMF), including only data with an A25 (Arts Education) NTEE (National Taxonomy of Exempt Entities) code.\nI made a pretty bad visualization in order to test embed-resources"
+  },
+  {
+    "objectID": "posts/a25-word-count/index.html#column",
+    "href": "posts/a25-word-count/index.html#column",
+    "title": "Bar Graph 1: Landscape of Arts Education Nonprofits",
+    "section": "Column",
+    "text": "Column\nRemoving the relatively poor visualization that was mostly intended to test embed-resources, I’ve now added a visualization that will be, in some form, in my final project.\nWelcome!\nToday, I took the following steps:\n\nI created this blog!\nI cleaned and uploaded data from the Business Master File (BMF), including only data with an A25 (Arts Education) NTEE (National Taxonomy of Exempt Entities) code.\nI made a pretty bad visualization in order to test embed-resources"
   }
 ]
