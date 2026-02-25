@@ -24,14 +24,25 @@ library(shiny)
 library(rio)
 ```
 
-# Visualization
+# Overview
+
+## Column
+**How useful can NTEE Codes be in Studying Nonprofits?**
+
+This dashboard will explore United States nonprofit organizations that are coded as "A25" in the National Taxonomy of Exempt Organizations (NTEE), a coding scheme that describes kinds of nonprofit organizations. "A25" is defined by the Urban Institute as "Organizations that provide informal arts educational programming and/or instruction but do not grant diplomas or degrees; or which offer services regarding the arts to educational institutions or to public entities involved in education." Using data from the [Urban Institute's Business Master File (BMF)](https://urbaninstitute.github.io/nccs/datasets/bmf/), I explore the kinds of organizations that use A25 
+
+# Visualization 1: A25 Word Count
 
 ## Column
 
 ```{r}
 a25 <- import(here("data/BMF_A25.csv"))
 
-a25 |>
+kind_of_org <- c("foundation")
+art_words <- c("arts", "art")
+target_audience <- c("artists", "american", "community", "youth")
+
+a25_top_50 <- a25 |>
   unnest_tokens(output = words, input = ORG_NAME_CURRENT) |>
   select(words) |>
   filter(!words %in% stop_words$word) |>
@@ -40,14 +51,20 @@ a25 |>
   filter(words != "Other") |>
   group_by(words) |>
   summarize(n = sum(n)) |>
-  mutate(words=fct_reorder(words, n)) |>
+  mutate(words=fct_reorder(words, n))
+
+a25_top_50 |>
   ggplot(aes(n, words)) +
   geom_col() +
+  geom_col(aes(y=filter(a25_top_50, words=="arts")$words), fill = "red") +
+#  geom_col(aes(y=filter(a25_top_50, words%in%target_audience)$words), fill="blue") +
   labs(
     title = "Top 50 Words in A25 \"Arts Education\" Organization Names",
     x = "Instances in A25 Organization Names",
-    y = ""
+    y = "",
+    caption = ""
   ) +
+  theme_minimal() +
   theme(
     axis.text.y = element_text(size = 4)
   )

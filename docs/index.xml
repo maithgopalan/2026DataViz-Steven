@@ -12,9 +12,17 @@
 <generator>quarto-1.8.25</generator>
 <lastBuildDate>Mon, 23 Feb 2026 08:00:00 GMT</lastBuildDate>
 <item>
-  <title>Bar Graph 1: Landscape of Arts Education Nonprofits</title>
+  <title></title>
   <dc:creator>Steven Todd McIntyre II</dc:creator>
   <link>https://your-website-url.example.com/posts/a25-word-count/</link>
+  <description><![CDATA[ undefined ]]></description>
+  <guid>https://your-website-url.example.com/posts/a25-word-count/</guid>
+  <pubDate>Mon, 23 Feb 2026 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>First Steps: Starting a Visualization Project</title>
+  <dc:creator>Steven Todd McIntyre II</dc:creator>
+  <link>https://your-website-url.example.com/posts/first-post-and-actions/</link>
   <description><![CDATA[ 
 
 
@@ -23,11 +31,12 @@
 
 <section id="visualization" class="level1">
 <h1>Visualization</h1>
+<p>This is a poor visualization to test embed-resources.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/a25-word-count/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://your-website-url.example.com/posts/first-post-and-actions/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="768"></p>
 </figure>
 </div>
 </div>
@@ -37,7 +46,7 @@
 <h1>Summary of Updates</h1>
 <section id="column" class="level2">
 <h2 class="anchored" data-anchor-id="column">Column</h2>
-<p>Removing the relatively poor visualization that was mostly intended to test embed-resources, I’ve now added a visualization that will be, in some form, in my final project.</p>
+<p>This is the first post in my final project’s Quarto blog, which documents the progress of my Arts Education Nonprofit Exploration digital dashboard. Each post will show iterations on my process.</p>
 <p>Welcome!</p>
 <p>Today, I took the following steps:</p>
 <ul>
@@ -51,14 +60,6 @@
 </section>
 
  ]]></description>
-  <guid>https://your-website-url.example.com/posts/a25-word-count/</guid>
-  <pubDate>Mon, 23 Feb 2026 08:00:00 GMT</pubDate>
-</item>
-<item>
-  <title></title>
-  <dc:creator>Steven Todd McIntyre II</dc:creator>
-  <link>https://your-website-url.example.com/posts/first-post-and-actions/</link>
-  <description><![CDATA[ undefined ]]></description>
   <guid>https://your-website-url.example.com/posts/first-post-and-actions/</guid>
   <pubDate>Wed, 18 Feb 2026 08:00:00 GMT</pubDate>
 </item>
