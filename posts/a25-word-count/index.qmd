@@ -45,21 +45,23 @@ art_words <- c("arts", "art")
 target_audience <- c("artists", "american", "community", "youth")
 
 a25_top_50 <- a25 |>
-  unnest_tokens(output = words, input = ORG_NAME_CURRENT) |>
-  select(words) |>
-  filter(!words %in% stop_words$word) |>
-  count(words) |>
-  mutate(words = fct_lump_n(words, n=50, w=n)) |>
-  filter(words != "Other") |>
-  group_by(words) |>
+  unnest_tokens(output = word, input = ORG_NAME_CURRENT) |>
+  select(word) |>
+  filter(!word %in% stop_words$word) |>
+  count(word) |>
+  mutate(word = fct_lump_n(word, n=50, w=n)) |>
+  filter(word != "Other") |>
+  group_by(word) |>
   summarize(n = sum(n)) |>
-  mutate(words=fct_reorder(words, n))
+  mutate(word=fct_reorder(word, n))
 
-a24_top_50_plot <- a25_top_50 |>
-  ggplot(aes(n, words)) +
+a25_kinds <- a25_top_50 |>
+  filter(word%in%kind_of_org)
+
+a25_top_50_plot <- a25_top_50 |>
+  ggplot(aes(n, word)) +
   geom_col() +
-  geom_col(aes(y=filter(a25_top_50, words=="arts")$words), fill = "red") +
-#  geom_col(aes(y=filter(a25_top_50, words%in%target_audience)$words), fill="blue") +
+  geom_col(data = a25_kinds, aes(x = n, y = word), fill = "red") +
   labs(
     title = "Top 50 Words in A25 \"Arts Education\" Organization Names",
     x = "Instances in A25 Organization Names",
@@ -68,11 +70,12 @@ a24_top_50_plot <- a25_top_50 |>
   ) +
   theme_minimal() +
   theme(
-    axis.text.y = element_text(size = 4)
+    axis.text.y = element_text(size = 5)
   )
 
-ggplotly(a24_top_50_plot)
+ggplotly(a25_top_50_plot)
 ```
+
 
 # Summary of Updates
 
