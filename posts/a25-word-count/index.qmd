@@ -22,6 +22,8 @@ library(here)
 library(knitr)
 library(shiny)
 library(rio)
+library(plotly)
+
 ```
 
 # Overview
@@ -53,7 +55,7 @@ a25_top_50 <- a25 |>
   summarize(n = sum(n)) |>
   mutate(words=fct_reorder(words, n))
 
-a25_top_50 |>
+a24_top_50_plot <- a25_top_50 |>
   ggplot(aes(n, words)) +
   geom_col() +
   geom_col(aes(y=filter(a25_top_50, words=="arts")$words), fill = "red") +
@@ -62,13 +64,14 @@ a25_top_50 |>
     title = "Top 50 Words in A25 \"Arts Education\" Organization Names",
     x = "Instances in A25 Organization Names",
     y = "",
-    caption = ""
+    caption = "Data from the Urban Institute's Business Master File."
   ) +
   theme_minimal() +
   theme(
     axis.text.y = element_text(size = 4)
   )
 
+ggplotly(a24_top_50_plot)
 ```
 
 # Summary of Updates
