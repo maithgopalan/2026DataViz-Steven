@@ -94,4 +94,9 @@ ggplotly(a25_top_50_plot)
 
 Removing the relatively poor visualization that was mostly intended to test embed-resources, I've now added a visualization that will be, in some form, in my final project.
 
-In this post, I did the following: - counted up the words in all A25 nonprofit current organization names - removed common "stop words" using tidytext (e.g., "a", "of" "in") - coded the words into 5 categories based on what they are referring to: organization (the kind of organization), art (words pertaining to the kind of art), education (words implying educational mission), location (speaks to the place of the organization), and people (speaks to members or target audience of the organization) - made a column plot of the top 50 words from A25 organization names, with fill colors associated with my coding scheme
+In this post, I did the following:
+
+-   counted up the words in all A25 nonprofit current organization names
+-   removed common "stop words" using tidytext (e.g., "a", "of", "in", etc.)
+-   coded the words into 5 categories based on what they are referring to: organization (the kind of organization), art (words pertaining to the kind of art), education (words implying educational mission), location (speaks to the place of the organization), and people (speaks to members or target audience of the organization)
+-   made a column plot of the top 50 words from A25 organization names, with fill colors associated with my coding scheme
