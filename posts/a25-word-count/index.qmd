@@ -1,5 +1,5 @@
 ---
-title: "Bar Graph 1: Landscape of Arts Education Nonprofits"
+title: "Word Counts: Landscape of Arts Education Nonprofits"
 author: "Steven Todd McIntyre II"
 date: "2026-02-25"
 runtime: shiny
@@ -29,9 +29,10 @@ library(plotly)
 # Overview
 
 ## Column
+
 **How useful can NTEE Codes be in Studying Nonprofits?**
 
-This dashboard will explore United States nonprofit organizations that are coded as "A25" in the National Taxonomy of Exempt Organizations (NTEE), a coding scheme that describes kinds of nonprofit organizations. "A25" is defined by the Urban Institute as "Organizations that provide informal arts educational programming and/or instruction but do not grant diplomas or degrees; or which offer services regarding the arts to educational institutions or to public entities involved in education." Using data from the [Urban Institute's Business Master File (BMF)](https://urbaninstitute.github.io/nccs/datasets/bmf/), I explore the kinds of organizations that use A25 
+This dashboard will explore United States nonprofit organizations that are coded as "A25: Arts Education" in the National Taxonomy of Exempt Organizations (NTEE), a coding scheme that describes kinds of nonprofit organizations. "A25" is defined by the Urban Institute as "Organizations that provide informal arts educational programming and/or instruction but do not grant diplomas or degrees; or which offer services regarding the arts to educational institutions or to public entities involved in education." Using data from the [Urban Institute's Business Master File (BMF)](https://urbaninstitute.github.io/nccs/datasets/bmf/), I explore the kinds of organizations that define themselves as A25 and consider the NTEE classification's usefulness in exploring nonprofit arts education activities.
 
 # Visualization 1: A25 Word Count
 
@@ -87,11 +88,10 @@ a25_top_50_plot <- a25_top_50 |>
 ggplotly(a25_top_50_plot)
 ```
 
-
 # Summary of Updates
 
 ## Column
 
 Removing the relatively poor visualization that was mostly intended to test embed-resources, I've now added a visualization that will be, in some form, in my final project.
 
-In this
+In this post, I did the following: - counted up the words in all A25 nonprofit current organization names - removed common "stop words" using tidytext (e.g., "a", "of" "in") - coded the words into 5 categories based on what they are referring to: organization (the kind of organization), art (words pertaining to the kind of art), education (words implying educational mission), location (speaks to the place of the organization), and people (speaks to members or target audience of the organization) - made a column plot of the top 50 words from A25 organization names, with fill colors associated with my coding scheme
