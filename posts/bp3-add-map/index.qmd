@@ -100,9 +100,12 @@ a25_state_count <- a25 |>
   select(state, n) |>
   filter(state != "")
 
-plot_usmap(data = a25_state_count, values = "n") +
+a25_dist_map <- plot_usmap(data = a25_state_count, values = "n") +
   labs(title = "Where are the A25 Arts Education Nonprofits?") +
-  theme_minimal()
+  theme_minimal() +
+  scale_fill_continuous(palette = "PuBu")
+
+ggplotly(a25_dist_map)
 
 ```
 
