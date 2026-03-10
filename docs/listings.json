@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/bp5-add-revenue-distr/index.html",
       "/posts/bp4-add-count-per-state/index.html",
       "/posts/bp3-add-map/index.html",
       "/posts/a25-word-count/index.html",

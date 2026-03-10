@@ -1,0 +1,156 @@
+---
+title: "How Much Money is in This, Anyway?"
+author: "Steven Todd McIntyre II"
+date: "2026-03-08"
+runtime: shiny
+format: 
+  dashboard:
+    embed-resources: true
+    theme: minty
+    output:
+      orientation: columns
+execute:
+  warning: false
+  message: false
+  echo: false
+---
+
+```{r}
+library(tidyverse)
+library(tidytext)
+library(here)
+library(knitr)
+library(shiny)
+library(rio)
+library(plotly)
+library(usmap)
+library(scales)
+
+```
+
+# Overview
+
+## Column
+
+**How useful can NTEE Codes be in Studying Arts Education Nonprofits?**
+
+This dashboard will explore United States nonprofit organizations that are coded as "A25: Arts Education" in the National Taxonomy of Exempt Organizations (NTEE), a coding scheme that describes kinds of nonprofit organizations. "A25" is defined by the Urban Institute as "Organizations that provide informal arts educational programming and/or instruction but do not grant diplomas or degrees; or which offer services regarding the arts to educational institutions or to public entities involved in education." Using data from the [Urban Institute's Business Master File (BMF)](https://urbaninstitute.github.io/nccs/datasets/bmf/), I explore the kinds of organizations that define themselves as A25 and consider the NTEE classification's usefulness in exploring nonprofit arts education activities.
+
+# Visualization 1: A25 Word Count
+
+## Column
+
+```{r}
+a25 <- import(here("data/BMF_A25.csv"))
+
+# set categories of top 50 words
+kind_of_org <- c("foundation", "institute", "school", "center", "academy", "association", "guild", "society", "project", "studio", "incorporated", "club", "corporation", "alliance", "productions", "program", "council", "collective", "nfp", "league", "friends", "corp", "boosters", "gallery")
+art_words <- c("arts", "art", "music", "creative", "fine", "design", "theatre", "performing", "workshop", "graphic", "dance", "traditional", "cultural", "hooking", "theater", "quilters", "woodturners")
+education_words <- c("education", "learning", "educational")
+locations <- c("american", "community", "international", "county", "valley", "city")
+target_audience <- c("artists", "youth", "kids", "artist", "childrens")
+
+a25 <- a25 |>
+  filter(ORG_YEAR_LAST >= 2024)
+
+
+a25_top_50 <- a25 |>
+  unnest_tokens(output = word, input = ORG_NAME_CURRENT) |>
+  select(word) |>
+  filter(!word %in% stop_words$word) |>
+  count(word) |>
+  mutate(word = fct_lump_n(word, n=50, w=n)) |>
+  filter(word != "Other") |>
+  group_by(word) |>
+  summarize(n = sum(n)) |>
+  mutate(word=fct_reorder(word, n))
+
+a25_top_50 <- a25_top_50 |>
+  mutate(category = case_when(
+    word%in%kind_of_org ~ "organization",
+    word%in%art_words ~ "art",
+    word%in%education_words ~ "education",
+    word%in%locations ~ "location",
+    word%in%target_audience ~ "people"
+  ))
+
+a25_kinds <- a25_top_50 |>
+  filter(word%in%kind_of_org)
+
+a25_top_50_plot <- a25_top_50 |>
+  ggplot(aes(n, word, fill = category)) +
+  geom_col(width = .9, position = position_dodge(.7)) +
+  labs(
+    title = "Top 50 Words in Arts Education Nonprofit Names",
+    x = "Instances in Organization Names",
+    y = "",
+    caption = "Data from the Urban Institute's Business Master File."
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.y = element_text(size = 8) 
+  )
+
+ggplotly(a25_top_50_plot)
+```
+
+# Visualization 2: US Map
+
+## Column
+
+```{r}
+a25_state_count <- a25 |>
+  count(F990_ORG_ADDR_STATE) |>
+  mutate(state = F990_ORG_ADDR_STATE) |>
+  select(state, n) |>
+  filter(state != "")
+
+a25_dist_map <- plot_usmap(data = a25_state_count, values = "n") +
+  labs(title = "Where are the A25 Arts Education Nonprofits?") +
+  theme_minimal() +
+  scale_fill_continuous(palette = "PuBu")
+
+ggplotly(a25_dist_map)
+
+```
+
+# Visualization 3: A25 vs. State Population
+
+## Column
+
+```{r}
+# join usmaps' state population table w/ a25 count data
+a25_statepop <- inner_join(a25_state_count, statepop, by = join_by(state == abbr))
+
+a25_statepop |>
+  ggplot(aes(x=pop_2022, y=n)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(
+    title = "Variation of Arts Education Nonprofits vs. State Population"
+    
+  )
+
+```
+
+# Visualization 4: 2024 Arts Education Nonprofit Revenues
+```{r}
+a25 |>
+  ggplot(aes(x = F990_TOTAL_REVENUE_RECENT)) +
+  geom_boxplot() +
+  scale_x_log10(labels = scales::label_currency(prefix = "$", big.mark = ",")) +
+  theme_minimal()
+
+```
+
+
+# Summary of Updates
+
+## Column
+
+While number of organizations is interesting to look at, another value that bears consideration is the revenue that flows through these organizations. To get a broad sense of the revenues running through of each organization, I added a box and whiskers plot to explore the distribution.
+
+In this post, I did the following:
+
+-   I added a distribution boxplot of revenues in 2024 among arts education nonprofits, with a logarithmic scale because it is hard to look at otherwise.
+-   Used the `scales` package to make the x-axis more readable.
