@@ -10,7 +10,15 @@
 <atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Final Project for EDLD 652</description>
 <generator>quarto-1.8.25</generator>
-<lastBuildDate>Tue, 10 Mar 2026 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 11 Mar 2026 07:00:00 GMT</lastBuildDate>
+<item>
+  <title></title>
+  <dc:creator>Steven Todd McIntyre II</dc:creator>
+  <link>https://your-website-url.example.com/posts/bp7-add-context/</link>
+  <description><![CDATA[ undefined ]]></description>
+  <guid>https://your-website-url.example.com/posts/bp7-add-context/</guid>
+  <pubDate>Wed, 11 Mar 2026 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title></title>
   <dc:creator>Steven Todd McIntyre II</dc:creator>
