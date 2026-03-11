@@ -1,0 +1,215 @@
+---
+title: "Labels and Colors"
+author: "Steven Todd McIntyre II"
+date: "2026-03-10"
+runtime: shiny
+format: 
+  dashboard:
+    embed-resources: true
+    theme: minty
+    output:
+      orientation: columns
+execute:
+  warning: false
+  message: false
+  echo: false
+---
+
+```{r}
+library(tidyverse)
+library(tidytext)
+library(here)
+library(knitr)
+library(shiny)
+library(rio)
+library(plotly)
+library(usmap)
+library(scales)
+library(ggrepel)
+library(ggbeeswarm)
+
+```
+
+# Overview
+
+## Column
+
+**How useful can NTEE Codes be in Studying Arts Education Nonprofits?**
+
+This dashboard will explore United States nonprofit organizations that are coded as "A25: Arts Education" in the National Taxonomy of Exempt Organizations (NTEE), a coding scheme that describes kinds of nonprofit organizations. "A25" is defined by the Urban Institute as "Organizations that provide informal arts educational programming and/or instruction but do not grant diplomas or degrees; or which offer services regarding the arts to educational institutions or to public entities involved in education." Using data from the [Urban Institute's Business Master File (BMF)](https://urbaninstitute.github.io/nccs/datasets/bmf/), I explore the kinds of organizations that define themselves as A25 and consider the NTEE classification's usefulness in exploring nonprofit arts education activities.
+
+# Visualization 1: Arts Education Nonprofit Title Word Count
+
+## Column
+
+```{r}
+a25 <- import(here("data/BMF_A25.csv"))
+
+# set categories of top 50 words
+kind_of_org <- c("foundation", "institute", "school", "center", "academy", "association", "guild", "society", "project", "studio", "incorporated", "club", "corporation", "alliance", "productions", "program", "council", "collective", "nfp", "league", "friends", "corp", "boosters", "gallery")
+art_words <- c("arts", "art", "music", "creative", "fine", "design", "theatre", "performing", "workshop", "graphic", "dance", "traditional", "cultural", "hooking", "theater", "quilters", "woodturners")
+education_words <- c("education", "learning", "educational")
+locations <- c("american", "community", "international", "county", "valley", "city")
+target_audience <- c("artists", "youth", "kids", "artist", "childrens")
+
+# remove orgs that no longer exist
+a25 <- a25 |>
+  filter(ORG_YEAR_LAST >= 2024)
+
+# create a table of the top 50 words in org names
+a25_top_50 <- a25 |>
+  unnest_tokens(output = word, input = ORG_NAME_CURRENT) |>
+  select(word) |>
+  filter(!word %in% stop_words$word) |>
+  count(word) |>
+  mutate(word = fct_lump_n(word, n=50, w=n)) |>
+  filter(word != "Other") |>
+  group_by(word) |>
+  summarize(n = sum(n)) |>
+  mutate(word=fct_reorder(word, n))
+
+# add categories to the top 50 words
+a25_top_50 <- a25_top_50 |>
+  mutate(category = case_when(
+    word%in%kind_of_org ~ "organization",
+    word%in%art_words ~ "art",
+    word%in%education_words ~ "education",
+    word%in%locations ~ "location",
+    word%in%target_audience ~ "people"
+  ))
+
+# create plot
+a25_top_50_plot <- a25_top_50 |>
+  ggplot(aes(n, word, fill = category)) +
+  geom_col(width = .9, position = position_dodge(.7)) +
+  labs(
+    title = "Top 50 Words in Arts Education Nonprofit Names",
+    x = "Instances in Organization Names",
+    y = "",
+    fill = "Word Category",
+    caption = "Data from the Urban Institute's Business Master File. Categories coded by author."
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.y = element_text(size = 8) 
+  ) +
+  scale_fill_discrete(palette = "Set2")
+
+ggplotly(a25_top_50_plot)
+```
+
+# Visualization 2: US Map
+
+## Column
+
+```{r}
+# create table with count of A25 in each state
+a25_state_count <- a25 |>
+  count(F990_ORG_ADDR_STATE) |>
+  mutate(state = F990_ORG_ADDR_STATE) |>
+  select(state, n) |>
+  filter(state != "")
+
+# create map plot using US Map
+a25_dist_map <- plot_usmap(data = a25_state_count, values = "n") +
+  labs(title = "Where are the Arts Education Nonprofits?",
+       subtitle = "Count of arts education nonprofits in each US state.",
+       fill = "Number of Arts\nEducation Nonprofits",
+       caption = "Data from the Urban Institute's Business Master File.") +
+  theme_minimal() +
+  scale_fill_continuous(palette = "PuBu")
+
+ggplotly(a25_dist_map)
+
+```
+
+# Visualization 3: Arts Education Nonprofits vs. State Population
+
+## Column {.tabset}
+
+```{r}
+#| title: "Static, With Labels"
+# join usmaps' state population table w/ a25 count data
+a25_statepop <- inner_join(a25_state_count, statepop, by = join_by(state == abbr))
+
+# create scatterplot with fit line, highlight higher and lower states
+a25_statepop_scatter <- a25_statepop |>
+  ggplot(aes(x=pop_2022, y=n, label=state)) +
+  geom_smooth(method = "lm", se = FALSE, color = "grey90") +
+  geom_point(color = "grey60") +
+  geom_point(data = a25_statepop |> filter(state%in%c("CA", "NY", "OR", "MA", "VT", "DC")), color = "green") +
+  geom_point(data = a25_statepop |> filter(state%in%c("PR", "MS", "SC", "NE", "OK")), color = "red") +
+  geom_text_repel(color = "black") +
+  theme_minimal() +
+  labs(
+    title = "Variation of Arts Education Nonprofits vs. State Population",
+    subtitle = "Count of arts education nonprofits in each US state. Note states above and below the line. Any trends?",
+    x = "2022 State Population (log10)",
+    y = "Number of Arts Education Nonprofits (log10)",
+    caption = "Nonprofit data from the Urban Institute's Business Master File. State population data provided through \`usmap\` package.\nEach are plotted logarithmically for better spacing between lower-populated states."
+    
+  ) +
+  scale_color_manual(values = c()) +
+  scale_x_log10(labels = scales::comma) +
+  scale_y_log10()
+
+a25_statepop_scatter
+```
+
+```{r}
+#| title: "Interactive, No Labels"
+#make ggplotly version
+ggplotly(a25_statepop_scatter)
+```
+
+
+# Visualization 4: 2024 Arts Education Nonprofit Revenues
+
+## Column {.tabset}
+```{r}
+#| title: "Log10 Distribution"
+# Make Distribution Beeswarm Plot
+a25_rev_distr_log <- a25 |>
+  ggplot(aes(y="", x = F990_TOTAL_REVENUE_RECENT, label = ORG_NAME_CURRENT)) +
+  geom_quasirandom(color = "darkgrey") +
+  scale_x_log10(labels = scales::label_currency(prefix = "$", big.mark = ",")) +
+  theme_minimal() +
+  labs(
+    title = "2024 Revenue Distribution for Arts Education Nonprofits",
+    y = "",
+    x = "Total Revenue Reported in 2024 F990 Form (log10)",
+    caption = "Nonprofit data from the Urban Institute's Business Master File."
+  )
+
+ggplotly(a25_rev_distr_log)
+```
+
+```{r}
+#| title: "Linear Distribution"
+a25_rev_distr_lin <- a25 |>
+  ggplot(aes(y="", x = F990_TOTAL_REVENUE_RECENT, label = ORG_NAME_CURRENT)) +
+  geom_quasirandom(color = "darkgrey") +
+  scale_x_continuous(labels = scales::label_currency(prefix = "$", big.mark = ",")) +
+  theme_minimal() +
+  labs(
+    title = "2024 Revenue Distribution for Arts Education Nonprofits",
+    y = "",
+    x = "Total Revenue Reported in 2024 F990 Form",
+    caption = "Nonprofit data from the Urban Institute's Business Master File."
+  )
+
+ggplotly(a25_rev_distr_lin)
+```
+
+# Summary of Updates
+
+## Column
+
+This pass, in preparation for my presentation, was for labels, colors, and readability pieces. Here's to trying to tell better data stories!
+
+In this post, I did the following:
+
+-   V1: Changed colors, edited labels.
+-   V2: Added/edited labels.
+-   V3: Added labels. Added a label for each state using ggrepel. Placed each axis on a logarithmic scale for a better viewing experience.
+-   V4: Changed from a boxplot to a beeswarm plot in ggplotly, to examine outliers while showing overall distribution. Retained log10 x-axis. Added labels and tabset with two versions present.

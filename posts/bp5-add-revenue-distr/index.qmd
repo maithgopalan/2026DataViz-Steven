@@ -1,5 +1,5 @@
 ---
-title: "How Much Money is in This, Anyway?"
+title: "How Much Money is in this, Anyway?"
 author: "Steven Todd McIntyre II"
 date: "2026-03-08"
 runtime: shiny
@@ -50,10 +50,11 @@ education_words <- c("education", "learning", "educational")
 locations <- c("american", "community", "international", "county", "valley", "city")
 target_audience <- c("artists", "youth", "kids", "artist", "childrens")
 
+# remove orgs that no longer exist
 a25 <- a25 |>
   filter(ORG_YEAR_LAST >= 2024)
 
-
+# create a table of the top 50 words in org names
 a25_top_50 <- a25 |>
   unnest_tokens(output = word, input = ORG_NAME_CURRENT) |>
   select(word) |>
@@ -65,6 +66,7 @@ a25_top_50 <- a25 |>
   summarize(n = sum(n)) |>
   mutate(word=fct_reorder(word, n))
 
+# add categories to the top 50 words
 a25_top_50 <- a25_top_50 |>
   mutate(category = case_when(
     word%in%kind_of_org ~ "organization",
@@ -74,9 +76,7 @@ a25_top_50 <- a25_top_50 |>
     word%in%target_audience ~ "people"
   ))
 
-a25_kinds <- a25_top_50 |>
-  filter(word%in%kind_of_org)
-
+# create plot
 a25_top_50_plot <- a25_top_50 |>
   ggplot(aes(n, word, fill = category)) +
   geom_col(width = .9, position = position_dodge(.7)) +
@@ -84,12 +84,14 @@ a25_top_50_plot <- a25_top_50 |>
     title = "Top 50 Words in Arts Education Nonprofit Names",
     x = "Instances in Organization Names",
     y = "",
+    fill = "Word Category",
     caption = "Data from the Urban Institute's Business Master File."
   ) +
   theme_minimal() +
   theme(
     axis.text.y = element_text(size = 8) 
-  )
+  ) +
+  scale_fill_discrete(palette = "Dark2")
 
 ggplotly(a25_top_50_plot)
 ```

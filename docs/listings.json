@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/bp6-labs-and-colors/index.html",
       "/posts/bp5-add-revenue-distr/index.html",
       "/posts/bp4-add-count-per-state/index.html",
       "/posts/bp3-add-map/index.html",
