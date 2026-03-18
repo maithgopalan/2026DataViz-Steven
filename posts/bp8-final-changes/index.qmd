@@ -115,7 +115,9 @@ Data from the Urban Institute's Unified Business Master File (2024).
 
 ## Sidebar {.sidebar}
 
-**Commentary** There are a number of NTEE codes under which nonprofits that engage in art education might land:
+**Commentary** 
+
+There are a number of NTEE codes under which nonprofits that engage in art education might land:
 
 -   A40: Visual Arts Orgs
 -   A50-57: Museums
@@ -131,15 +133,15 @@ Still, there are quite a number of organizations with the name "school" (n=182),
 
 At this point, I started to realize that, while A25 includes K-12 and higher education-focused organizations, it is not limited to them and includes many adult and continuing education organizations. It became apparent that my initial hope--that "A25" revenue sums or organization counts could serve as a proxy for nonprofit arts education activity to analyze against public arts education funding and activity--wasn't tenable. There is a lot of complexity within and without "A25" that makes it a poor operationalization for "arts education nonprofit activity" to compare 1-1 against public funding in a given locality.
 
-**Process Notes and Previous Versions:**
-
-This was one of the more challenging sets to wrangle data. I got used to the `tidytext` package, learned about so-called "stop words" (e.g., "a", "the", "of", etc.), and also learned about my data. For example, after Old Version 1 (see below), I realized that the Unified BMF dataset includes all US nonprofit data since 1989, including nonprofits that no longer exist, so I had to filter for only nonprofits that filed taxes in 2024.
-
-**NOTE: Please use the back arrows in your browser to return to this page from the old versions. You can also click on "Arts Education Nonprofits" in the top left and navigate to the most recent blog post for the final version.**
+**Previous Versions and Process Notes**
 
 - [Old Version 1](https://stmii.github.io/Arts-Education-Nonprofit-Exploration/posts/a25-word-count/#visualization-1-a25-word-count)
 - [Old Version 2](https://stmii.github.io/Arts-Education-Nonprofit-Exploration/posts/bp4-add-count-per-state/#visualization-1-a25-word-count)
 - [Old Version 3](https://stmii.github.io/Arts-Education-Nonprofit-Exploration/posts/bp7-add-context/#visualization-1-arts-education-nonprofit-title-word-count)
+
+*NOTE: Please use the back arrows in your browser to return to this page from the old versions. You can also click on "Arts Education Nonprofits" in the top left and navigate to the most recent blog post for the final version.*
+
+This was one of the more challenging sets to wrangle data. I got used to the `tidytext` package, learned about so-called "stop words" (e.g., "a", "the", "of", etc.), and also learned about my data. For example, after Old Version 1 (see below), I realized that the Unified BMF dataset includes all US nonprofit data since 1989, including nonprofits that no longer exist, so I had to filter for only nonprofits that filed taxes in 2024.
 
 # Visualization 2: US Map
 
@@ -172,13 +174,14 @@ a25_dist_map
 
 As one might expect, the arts education nonprofits are where the people are. States with higher populations have higher numbers of arts education nonprofits. On it's own, this visualization doesn't say much, but it does lead nicely to visualization 3.
 
-**Process Notes and Previous Versions**
-It was fun to see how both `usmap` and `statebins` packages work. Adding `theme_minimal()` to `usmap` oddly added longitude and latitude, while adding `theme_void()` to `statebins` was essential to making it look decent. Based on the simplicity of this map, there wasn't too much iteration before the final product.
-
-**NOTE: Please use the back arrows in your browser to return to this page from the old versions. You can also click on "Arts Education Nonprofits" in the top left and navigate to the most recent blog post for the final version.**
+**Previous Versions and Process Notes**
 
 - [Old Version 1](https://stmii.github.io/Arts-Education-Nonprofit-Exploration/posts/bp3-add-map/#visualization-2-us-map)
 - [Old Version 2](https://stmii.github.io/Arts-Education-Nonprofit-Exploration/posts/bp7-add-context/#visualization-2-us-map) (prior to this version, I hadn't filtered for only current nonprofits)
+
+*NOTE: Please use the back arrows in your browser to return to this page from the old versions. You can also click on "Arts Education Nonprofits" in the top left and navigate to the most recent blog post for the final version.*
+
+It was fun to see how both `usmap` and `statebins` packages work. Adding `theme_minimal()` to `usmap` oddly added longitude and latitude, while adding `theme_void()` to `statebins` was essential to making it look decent. Based on the simplicity of this map, there wasn't too much iteration before the final product.
 
 # Visualization 3: Arts Education Nonprofits vs. State Population
 
@@ -210,12 +213,13 @@ a25_statepop_scatter <- a25_statepop |>
     color = "red2") +
 
   # labels + annotations
-  geom_text_repel(color = "black", size = 2.5, box.padding = 0.11) +
+  geom_text_repel(color = "black", size = 2.3, box.padding = 0.15) +
   annotate(
     "label",
     color = "blue2",
     x = 2000000,
     y = 300,
+    size = 2.8,
     label = "States with far more arts education nonprofits\nthan expected for their population size include\nCalifornia, Massachusetts, New York, Oregon, \nVermont, and the District of Columbia."
   ) +
     annotate(
@@ -223,6 +227,7 @@ a25_statepop_scatter <- a25_statepop |>
     color = "red2",
     x = 15000000,
     y = 15,
+    size = 2.8,
     label = "States with far fewer arts education nonprofits\nthan expected for their population size include\nMississippi, Nebraska, Oklahoma, Puerto Rico, \nand South Carolina."
   ) +
   theme_minimal() +
@@ -250,7 +255,13 @@ This was fun to examine--looking at the population of states vs. count of arts e
 
 I was a bit surprised by Puerto Rico being so low, but I wonder what the nonprofit culture looks like in Puerto Rico broadly. Would it be similarly situated in a graph that incorporated all nonprofits?
 
-**Process Notes and Previous Versions**
+**Previous Versions and Process Notes**
+
+- [Old Version 1](https://stmii.github.io/Arts-Education-Nonprofit-Exploration/posts/bp4-add-count-per-state/#visualization-3-a25-vs.-state-population)
+- [Old Version 2](https://stmii.github.io/Arts-Education-Nonprofit-Exploration/posts/bp5-add-revenue-distr/#visualization-3-a25-vs.-state-population) (prior to this version, I hadn't filtered for only current nonprofits)
+-[Old Version 3](https://stmii.github.io/Arts-Education-Nonprofit-Exploration/posts/bp6-labs-and-colors/#visualization-3-arts-education-nonprofits-vs.-state-population)
+
+*NOTE: Please use the back arrows in your browser to return to this page from the old versions. You can also click on "Arts Education Nonprofits" in the top left and navigate to the most recent blog post for the final version.*
 
 We talked a bit about how logs are not intuitive, and I tend to agree. However, the nature of my data led me to using them in this and the next visualizations.
 
@@ -259,12 +270,6 @@ Highlighting the most higher than expected and the most lower than expected seem
 I previously had a `ggplotly` version with no labels that you can hover to see the state, but decided against `ggplotly` for this one as the smaller text labels look rather nice.
 
 I also added annotations to explain the colors and changed the colors from red and green to red and blue to be more colorblind-accessible. It also has the added bonus of drawing subtle attention (without explicitly saying it) that those above the line tend to be blue states, those below tend to be red states.
-
-**NOTE: Please use the back arrows in your browser to return to this page from the old versions. You can also click on "Arts Education Nonprofits" in the top left and navigate to the most recent blog post for the final version.**
-
-- [Old Version 1](https://stmii.github.io/Arts-Education-Nonprofit-Exploration/posts/bp4-add-count-per-state/#visualization-3-a25-vs.-state-population)
-- [Old Version 2](https://stmii.github.io/Arts-Education-Nonprofit-Exploration/posts/bp5-add-revenue-distr/#visualization-3-a25-vs.-state-population) (prior to this version, I hadn't filtered for only current nonprofits)
--[Old Version 3](https://stmii.github.io/Arts-Education-Nonprofit-Exploration/posts/bp6-labs-and-colors/#visualization-3-arts-education-nonprofits-vs.-state-population)
 
 # Visualization 4: 2024 Arts Education Nonprofit Revenues
 
@@ -321,16 +326,16 @@ Near the top, we have a Head Start provider in South Los Angeles, CalArts, perha
 
 I think this speaks to the self-selecting nature of NTEE codes and how they reflect how organizations conceptualize themselves at time of founding, since NTEE codes are determined when they first apply for nonprofit status.
 
-**Process**
+**Previous Versions and Process Notes**
+
+- [Old Version 1](https://stmii.github.io/Arts-Education-Nonprofit-Exploration/posts/bp5-add-revenue-distr/#visualization-4-2024-arts-education-nonprofit-revenues)
+- [Old Version 2](https://stmii.github.io/Arts-Education-Nonprofit-Exploration/posts/bp6-labs-and-colors/#visualization-4-2024-arts-education-nonprofit-revenues)
+
+*NOTE: Please use the back arrows in your browser to return to this page from the old versions. You can also click on "Arts Education Nonprofits" in the top left and navigate to the most recent blog post for the final version.*
 
 I tried a boxplot, but I wanted a more nuanced look at the distribution. I tried a violin plot, but it didn't allow for specific outliers. I did briefly try violin plot with boxplot, but I disliked it so much that I did not upload a post for it (so the violin plot doesn't show up in my old versions). Then, I learned about the beeswarm plot from a Google search (`ggbeeswarm`) and really like it for my purpose--it is, in my opinion, the best of both worlds. It shows individual outliers like the boxplot while better-revealing the shape of the distribution like a violin plot. Alongside `ggplotly`, this allows for an at-a-glance distribution that the user can hover for specific information.
 
 I included both a log10 distribution and the linear distribution. The former is better to look at and explore the distribution, assuming the audience knows log10. The latter is really only useful for showing how a few arts education nonprofits have massively higher revenues than others. As a general rule, the further I go through visualizations, the more technical of an audience I'm expecting, so I think using log10 is fine.
-
-**NOTE: Please use the back arrows in your browser to return to this page from the old versions. You can also click on "Arts Education Nonprofits" in the top left and navigate to the most recent blog post for the final version.**
-
-- [Old Version 1](https://stmii.github.io/Arts-Education-Nonprofit-Exploration/posts/bp5-add-revenue-distr/#visualization-4-2024-arts-education-nonprofit-revenues)
-- [Old Version 2](https://stmii.github.io/Arts-Education-Nonprofit-Exploration/posts/bp6-labs-and-colors/#visualization-4-2024-arts-education-nonprofit-revenues)
 
 # Summary of Updates
 
