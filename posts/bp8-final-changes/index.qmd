@@ -180,7 +180,7 @@ As one might expect, the arts education nonprofits are where the people are. Sta
 
 *NOTE: Please use the back arrows in your browser to return to this page from the old versions. You can also click on "Arts Education Nonprofits" in the top left and navigate to the most recent blog post for the final version.*
 
-It was fun to see how both `usmap` and `statebins` packages work. Adding `theme_minimal()` to `usmap` oddly added longitude and latitude, while adding `theme_void()` to `statebins` was essential to making it look decent. Based on the simplicity of this map, there wasn't too much iteration before the final product.
+It was fun to see how both `usmap` and `statebins` packages work. Adding `theme_minimal()` to `usmap` oddly added longitude and latitude, while adding `theme_void()` to `statebins` was essential to making it look decent. Based on the simplicity of this map, there wasn't too much iteration before the final product. I did decide against a bivariate map that shows population and arts education nonprofit count, only because tracking multiple mixing colors like that doesn't feel intuitive to me and my visualization 3 accounts for that relationship a lot more clearly.
 
 # Visualization 3: Arts Education Nonprofits vs. State Population
 
