@@ -116,6 +116,8 @@ Data from the Urban Institute's Unified Business Master File (2024).
 
 **Commentary** 
 
+Audience: General lay audience, policymakers, researchers interested in arts nonprofits
+
 There are a number of NTEE codes under which nonprofits that engage in art education might land:
 
 -   A40: Visual Arts Orgs
@@ -170,6 +172,8 @@ a25_dist_map
 ## Sidebar {.sidebar}
 
 **Commentary**
+
+Audience: General lay audience, policymakers
 
 As one might expect, the arts education nonprofits are where the people are. States with higher populations have higher numbers of arts education nonprofits. On it's own, this visualization doesn't say much, but it does lead nicely to visualization 3.
 
@@ -250,6 +254,8 @@ a25_statepop_scatter
 
 **Commentary**
 
+Audience: State and federal policymakers in the nonprofit space, nonprofit leaders, researchers interested in arts nonprofits
+
 This was fun to examine--looking at the population of states vs. count of arts education nonprofits in that state. I noticed a sort of political trend here, which wasn't exactly what I expected. Note that, above the fit line, most states are typical "blue" states, and below, most are "red" states.
 
 I was a bit surprised by Puerto Rico being so low, but I wonder what the nonprofit culture looks like in Puerto Rico broadly. Would it be similarly situated in a graph that incorporated all nonprofits?
@@ -322,6 +328,8 @@ Note that `{r} nrow(a25 |> filter(F990_TOTAL_REVENUE_RECENT<=0))` out of `{r} nr
 ## Sidebar {.sidebar}
 
 **Commentary**
+
+Audience: Researchers interested in arts nonprofits, perhaps some policymakers with more economic interest/knowledge
 
 Counts of arts education nonprofits is fun, but I was curious about the spread of what kinds of *revenues* these organizations bring in. This could speak to their levels of impact.
 
