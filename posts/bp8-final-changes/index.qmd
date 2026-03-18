@@ -226,7 +226,7 @@ a25_statepop_scatter <- a25_statepop |>
     "label",
     color = "red2",
     x = 15000000,
-    y = 15,
+    y = 20,
     size = 2.8,
     label = "States with far fewer arts education nonprofits\nthan expected for their population size include\nMississippi, Nebraska, Oklahoma, Puerto Rico, \nand South Carolina."
   ) +
