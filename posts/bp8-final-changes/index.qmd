@@ -1,8 +1,8 @@
 ---
-title: "Finishing Up: Final Edits"
+title: "Arts Education Nonprofits Dashboard - Final"
 author: "Steven Todd McIntyre II"
 image: "header.jpg"
-date: "2026-03-16"
+date: "2026-03-17"
 runtime: shiny
 format: 
   dashboard:
@@ -42,7 +42,6 @@ library(scales)
 library(ggrepel)
 library(ggbeeswarm)
 library(statebins)
-
 ```
 
 # Overview
@@ -51,7 +50,7 @@ library(statebins)
 
 **How useful can NTEE Codes be in Studying Arts Education Nonprofits?**
 
-This dashboard will explore United States nonprofit organizations that are coded as "A25: Arts Education" in the [National Taxonomy of Exempt Organizations (NTEE)](https://nccs.urban.org/nccs/pubs/ntee-two-page-2005.pdf), a coding scheme that describes kinds of nonprofit organizations. "A25" is defined by the Urban Institute as "Organizations that provide informal arts educational programming and/or instruction but do not grant diplomas or degrees; or which offer services regarding the arts to educational institutions or to public entities involved in education." Using data from the [Urban Institute's Business Master File (BMF)](https://urbaninstitute.github.io/nccs/datasets/bmf/), I explore the kinds of organizations that define themselves as A25 and consider the NTEE classification's usefulness in exploring nonprofit arts education activities.
+This dashboard will explore United States nonprofit organizations that are coded as "A25: Arts Education" in the [National Taxonomy of Exempt Organizations (NTEE)](https://nccs.urban.org/nccs/pubs/ntee-two-page-2005.pdf), a coding scheme that describes kinds of nonprofit organizations. Every nonprofit organization in the USA selects an NTEE code upon their founding. "A25" is defined by the Urban Institute as "Organizations that provide informal arts educational programming and/or instruction but do not grant diplomas or degrees; or which offer services regarding the arts to educational institutions or to public entities involved in education." Using data from the [Urban Institute's Business Master File (BMF)](https://urbaninstitute.github.io/nccs/datasets/bmf/), I explore the kinds of organizations that define themselves as A25 and consider the NTEE classification's usefulness in exploring nonprofit arts education activities.
 
 # Visualization 1: Arts Education Nonprofit Title Word Count
 
@@ -187,7 +186,7 @@ It was fun to see how both `usmap` and `statebins` packages work. Adding `theme_
 
 ## Column
 
-```{r}
+```{r fig.width=10, fig.height=7}
 # join usmaps' state population table w/ a25 count data
 a25_statepop <- inner_join(a25_state_count, statepop, by = join_by(state == abbr))
 
@@ -213,22 +212,22 @@ a25_statepop_scatter <- a25_statepop |>
     color = "red2") +
 
   # labels + annotations
-  geom_text_repel(color = "black", size = 2.3, box.padding = 0.15) +
+  geom_text_repel(color = "black", size = 2.7, box.padding = .15) +
   annotate(
     "label",
     color = "blue2",
     x = 2000000,
     y = 300,
-    size = 2.8,
-    label = "States with far more arts education nonprofits\nthan expected for their population size include\nCalifornia, Massachusetts, New York, Oregon, \nVermont, and the District of Columbia."
+    size = 3.3,
+    label = "States/jurisdictions with the most arts education\nnonprofits for their population size include\nCalifornia, Massachusetts, New York, Oregon, \nVermont, and the District of Columbia."
   ) +
     annotate(
     "label",
     color = "red2",
     x = 15000000,
     y = 20,
-    size = 2.8,
-    label = "States with far fewer arts education nonprofits\nthan expected for their population size include\nMississippi, Nebraska, Oklahoma, Puerto Rico, \nand South Carolina."
+    size = 3.3,
+    label = "States/jurisdictions with the fewest arts education\nnonprofits for their population size include\nMississippi, Nebraska, Oklahoma, Puerto Rico, \nand South Carolina."
   ) +
   theme_minimal() +
   labs(
@@ -236,7 +235,7 @@ a25_statepop_scatter <- a25_statepop |>
     subtitle = "Compares each state against a linear model of an expected number of arts nonprofits per population size.",
     x = "2022 State Population (log10)",
     y = "Number of Arts Education Nonprofits (log10)",
-    caption = "Nonprofit data from the Urban Institute's Unified Business Master File (2024). State population data provided through \`usmap\` package.\nBoth axes are plotted logarithmically for better spacing between lower-populated states."
+    caption = "Nonprofit data from the Urban Institute's Unified Business Master File (2024).\nState population data provided through \`usmap\` package.\nBoth axes are plotted logarithmically for better spacing between lower-populated states."
     
   ) +
   scale_color_manual(values = c()) +
@@ -314,7 +313,7 @@ ggplotly(a25_rev_distr_lin)
 ```
 ### Row
 
-Nonprofit data from the Urban Institute's Unified Business Master File (2024).
+Nonprofit data from the Urban Institute's Unified Business Master File (2024). Hover points for organization name. Note that `{r} nrow(a25 |> filter(F990_TOTAL_REVENUE_RECENT<=0))` out of `{r} nrow(a25)` total Arts Education organizations had a revenue of $0 or less in 2024 and are, therefore, excluded from the log10 distribution since log10 of any value less than or equal to zero is undefined.
 
 ## Sidebar {.sidebar}
 

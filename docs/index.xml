@@ -10,14 +10,14 @@
 <atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Final Project for EDLD 652</description>
 <generator>quarto-1.8.25</generator>
-<lastBuildDate>Mon, 16 Mar 2026 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 17 Mar 2026 07:00:00 GMT</lastBuildDate>
 <item>
   <title></title>
   <dc:creator>Steven Todd McIntyre II</dc:creator>
   <link>https://your-website-url.example.com/posts/bp8-final-changes/</link>
   <description><![CDATA[ undefined ]]></description>
   <guid>https://your-website-url.example.com/posts/bp8-final-changes/</guid>
-  <pubDate>Mon, 16 Mar 2026 07:00:00 GMT</pubDate>
+  <pubDate>Tue, 17 Mar 2026 07:00:00 GMT</pubDate>
   <media:content url="https://your-website-url.example.com/posts/bp8-final-changes/header.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>

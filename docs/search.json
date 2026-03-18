@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Exploring Arts Education Nonprofits in the USA",
     "section": "",
-    "text": "Finishing Up: Final Edits\n\n\n\n\n\n\n\n\nMar 16, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation: Arts Education Nonprofit Landscape\n\n\n\n\n\n\n\n\nMar 11, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\n\n\n\n\n\n\n\nLabels and Colors\n\n\n\n\n\n\n\n\nMar 10, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\n\n\n\n\n\n\n\nHow Much Money is in this, Anyway?\n\n\n\n\n\n\n\n\nMar 8, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\n\n\n\n\n\n\n\nA25 Count vs State Population\n\n\n\n\n\n\n\n\nMar 5, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\n\n\n\n\n\n\n\nAdd US Map Plot: Where are Arts Education Nonprofits?\n\n\n\n\n\n\n\n\nMar 3, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\n\n\n\n\n\n\n\nWord Counts: Landscape of Arts Education Nonprofits\n\n\n\n\n\n\n\n\nFeb 25, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Steps: Starting a Visualization Project\n\n\n\n\n\n\n\n\nFeb 18, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\nNo matching items"
+    "text": "Arts Education Nonprofits Dashboard - Final\n\n\n\n\n\n\n\n\nMar 17, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\n\n\n\n\n\n\n\nPresentation: Arts Education Nonprofit Landscape\n\n\n\n\n\n\n\n\nMar 11, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\n\n\n\n\n\n\n\nLabels and Colors\n\n\n\n\n\n\n\n\nMar 10, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\n\n\n\n\n\n\n\nHow Much Money is in this, Anyway?\n\n\n\n\n\n\n\n\nMar 8, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\n\n\n\n\n\n\n\nA25 Count vs State Population\n\n\n\n\n\n\n\n\nMar 5, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\n\n\n\n\n\n\n\nAdd US Map Plot: Where are Arts Education Nonprofits?\n\n\n\n\n\n\n\n\nMar 3, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\n\n\n\n\n\n\n\nWord Counts: Landscape of Arts Education Nonprofits\n\n\n\n\n\n\n\n\nFeb 25, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Steps: Starting a Visualization Project\n\n\n\n\n\n\n\n\nFeb 18, 2026\n\n\nSteven Todd McIntyre II\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -96,5 +96,82 @@
     "title": "Bar Graph 1: Landscape of Arts Education Nonprofits",
     "section": "Column",
     "text": "Column\nRemoving the relatively poor visualization that was mostly intended to test embed-resources, I’ve now added a visualization that will be, in some form, in my final project.\nIn this"
+  },
+  {
+    "objectID": "posts/bp8-final-changes/index.html",
+    "href": "posts/bp8-final-changes/index.html",
+    "title": "Arts Education Nonprofits Dashboard - Final",
+    "section": "",
+    "text": "How useful can NTEE Codes be in Studying Arts Education Nonprofits?\nThis dashboard will explore United States nonprofit organizations that are coded as “A25: Arts Education” in the National Taxonomy of Exempt Organizations (NTEE), a coding scheme that describes kinds of nonprofit organizations. Every nonprofit organization in the USA selects an NTEE code upon their founding. “A25” is defined by the Urban Institute as “Organizations that provide informal arts educational programming and/or instruction but do not grant diplomas or degrees; or which offer services regarding the arts to educational institutions or to public entities involved in education.” Using data from the Urban Institute’s Business Master File (BMF), I explore the kinds of organizations that define themselves as A25 and consider the NTEE classification’s usefulness in exploring nonprofit arts education activities."
+  },
+  {
+    "objectID": "posts/bp8-final-changes/index.html#column",
+    "href": "posts/bp8-final-changes/index.html#column",
+    "title": "Arts Education Nonprofits Dashboard - Final",
+    "section": "",
+    "text": "How useful can NTEE Codes be in Studying Arts Education Nonprofits?\nThis dashboard will explore United States nonprofit organizations that are coded as “A25: Arts Education” in the National Taxonomy of Exempt Organizations (NTEE), a coding scheme that describes kinds of nonprofit organizations. Every nonprofit organization in the USA selects an NTEE code upon their founding. “A25” is defined by the Urban Institute as “Organizations that provide informal arts educational programming and/or instruction but do not grant diplomas or degrees; or which offer services regarding the arts to educational institutions or to public entities involved in education.” Using data from the Urban Institute’s Business Master File (BMF), I explore the kinds of organizations that define themselves as A25 and consider the NTEE classification’s usefulness in exploring nonprofit arts education activities."
+  },
+  {
+    "objectID": "posts/bp8-final-changes/index.html#column-1",
+    "href": "posts/bp8-final-changes/index.html#column-1",
+    "title": "Arts Education Nonprofits Dashboard - Final",
+    "section": "Column",
+    "text": "Column\n\n\n\n\n\n\nData from the Urban Institute’s Unified Business Master File (2024)."
+  },
+  {
+    "objectID": "posts/bp8-final-changes/index.html#sidebar",
+    "href": "posts/bp8-final-changes/index.html#sidebar",
+    "title": "Arts Education Nonprofits Dashboard - Final",
+    "section": "Sidebar",
+    "text": "Sidebar\nCommentary\nThere are a number of NTEE codes under which nonprofits that engage in art education might land:\n\nA40: Visual Arts Orgs\nA50-57: Museums\nA60-A6F: Performing Arts Orgs\nB*: Education Orgs\nO*: Youth Development Orgs\n\nArts education exists in wide capacities under these codes, but there is a particular code, “A25”, that is intended for Arts Education, specifically. I wanted to know what kinds of organizations primarily code themselves as “A25: Arts Education” and this word count was very informative toward that goal.\nOne work that was surprising was “hooking” (n=54), a form of rug-making. Evidently, there are a number of local nonprofits committed to hooking that largely seem to involve an older population.\nStill, there are quite a number of organizations with the name “school” (n=182), implying more formal arts education, and “foundation” (n=506), which implies some level of fundraising or grant-making. The landscape is really rather diverse.\nAt this point, I started to realize that, while A25 includes K-12 and higher education-focused organizations, it is not limited to them and includes many adult and continuing education organizations. It became apparent that my initial hope–that “A25” revenue sums or organization counts could serve as a proxy for nonprofit arts education activity to analyze against public arts education funding and activity–wasn’t tenable. There is a lot of complexity within and without “A25” that makes it a poor operationalization for “arts education nonprofit activity” to compare 1-1 against public funding in a given locality.\nPrevious Versions and Process Notes\n\nOld Version 1\nOld Version 2\nOld Version 3\n\nNOTE: Please use the back arrows in your browser to return to this page from the old versions. You can also click on “Arts Education Nonprofits” in the top left and navigate to the most recent blog post for the final version.\nThis was one of the more challenging sets to wrangle data. I got used to the tidytext package, learned about so-called “stop words” (e.g., “a”, “the”, “of”, etc.), and also learned about my data. For example, after Old Version 1 (see below), I realized that the Unified BMF dataset includes all US nonprofit data since 1989, including nonprofits that no longer exist, so I had to filter for only nonprofits that filed taxes in 2024."
+  },
+  {
+    "objectID": "posts/bp8-final-changes/index.html#column-2",
+    "href": "posts/bp8-final-changes/index.html#column-2",
+    "title": "Arts Education Nonprofits Dashboard - Final",
+    "section": "Column",
+    "text": "Column"
+  },
+  {
+    "objectID": "posts/bp8-final-changes/index.html#sidebar-1",
+    "href": "posts/bp8-final-changes/index.html#sidebar-1",
+    "title": "Arts Education Nonprofits Dashboard - Final",
+    "section": "Sidebar",
+    "text": "Sidebar\nCommentary\nAs one might expect, the arts education nonprofits are where the people are. States with higher populations have higher numbers of arts education nonprofits. On it’s own, this visualization doesn’t say much, but it does lead nicely to visualization 3.\nPrevious Versions and Process Notes\n\nOld Version 1\nOld Version 2 (prior to this version, I hadn’t filtered for only current nonprofits)\n\nNOTE: Please use the back arrows in your browser to return to this page from the old versions. You can also click on “Arts Education Nonprofits” in the top left and navigate to the most recent blog post for the final version.\nIt was fun to see how both usmap and statebins packages work. Adding theme_minimal() to usmap oddly added longitude and latitude, while adding theme_void() to statebins was essential to making it look decent. Based on the simplicity of this map, there wasn’t too much iteration before the final product."
+  },
+  {
+    "objectID": "posts/bp8-final-changes/index.html#column-3",
+    "href": "posts/bp8-final-changes/index.html#column-3",
+    "title": "Arts Education Nonprofits Dashboard - Final",
+    "section": "Column",
+    "text": "Column"
+  },
+  {
+    "objectID": "posts/bp8-final-changes/index.html#sidebar-2",
+    "href": "posts/bp8-final-changes/index.html#sidebar-2",
+    "title": "Arts Education Nonprofits Dashboard - Final",
+    "section": "Sidebar",
+    "text": "Sidebar\nCommentary\nThis was fun to examine–looking at the population of states vs. count of arts education nonprofits in that state. I noticed a sort of political trend here, which wasn’t exactly what I expected. Note that, above the fit line, most states are typical “blue” states, and below, most are “red” states.\nI was a bit surprised by Puerto Rico being so low, but I wonder what the nonprofit culture looks like in Puerto Rico broadly. Would it be similarly situated in a graph that incorporated all nonprofits?\nPrevious Versions and Process Notes\n\nOld Version 1\nOld Version 2 (prior to this version, I hadn’t filtered for only current nonprofits) -Old Version 3\n\nNOTE: Please use the back arrows in your browser to return to this page from the old versions. You can also click on “Arts Education Nonprofits” in the top left and navigate to the most recent blog post for the final version.\nWe talked a bit about how logs are not intuitive, and I tend to agree. However, the nature of my data led me to using them in this and the next visualizations.\nHighlighting the most higher than expected and the most lower than expected seemed reasonable, and in my final version I added some commentary on these highlights.\nI previously had a ggplotly version with no labels that you can hover to see the state, but decided against ggplotly for this one as the smaller text labels look rather nice.\nI also added annotations to explain the colors and changed the colors from red and green to red and blue to be more colorblind-accessible. It also has the added bonus of drawing subtle attention (without explicitly saying it) that those above the line tend to be blue states, those below tend to be red states."
+  },
+  {
+    "objectID": "posts/bp8-final-changes/index.html#column-4",
+    "href": "posts/bp8-final-changes/index.html#column-4",
+    "title": "Arts Education Nonprofits Dashboard - Final",
+    "section": "Column",
+    "text": "Column\n\nRow\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRow\nNonprofit data from the Urban Institute’s Unified Business Master File (2024). Hover points for organization name. Note that 2553 out of 4804 total Arts Education organizations had a revenue of $0 or less in 2024 and are, therefore, excluded from the log10 distribution since log10 of any value less than or equal to zero is undefined."
+  },
+  {
+    "objectID": "posts/bp8-final-changes/index.html#sidebar-3",
+    "href": "posts/bp8-final-changes/index.html#sidebar-3",
+    "title": "Arts Education Nonprofits Dashboard - Final",
+    "section": "Sidebar",
+    "text": "Sidebar\nCommentary\nCounts of arts education nonprofits is fun, but I was curious about the spread of what kinds of revenues these organizations bring in. This could speak to their levels of impact.\nNear the top, we have a Head Start provider in South Los Angeles, CalArts, perhaps the premiere private arts university in the US, and Interlochen, a summer camp/arts education center in the midwest. The latter two make a lot of sense (though I might expect CalArts to be under B40: Higher Education), but a Head Start program being listed under Arts Education a bit surprising to me when B21: Preschools and O20: Youth Centers and Clubs exist.\nI think this speaks to the self-selecting nature of NTEE codes and how they reflect how organizations conceptualize themselves at time of founding, since NTEE codes are determined when they first apply for nonprofit status.\nPrevious Versions and Process Notes\n\nOld Version 1\nOld Version 2\n\nNOTE: Please use the back arrows in your browser to return to this page from the old versions. You can also click on “Arts Education Nonprofits” in the top left and navigate to the most recent blog post for the final version.\nI tried a boxplot, but I wanted a more nuanced look at the distribution. I tried a violin plot, but it didn’t allow for specific outliers. I did briefly try violin plot with boxplot, but I disliked it so much that I did not upload a post for it (so the violin plot doesn’t show up in my old versions). Then, I learned about the beeswarm plot from a Google search (ggbeeswarm) and really like it for my purpose–it is, in my opinion, the best of both worlds. It shows individual outliers like the boxplot while better-revealing the shape of the distribution like a violin plot. Alongside ggplotly, this allows for an at-a-glance distribution that the user can hover for specific information.\nI included both a log10 distribution and the linear distribution. The former is better to look at and explore the distribution, assuming the audience knows log10. The latter is really only useful for showing how a few arts education nonprofits have massively higher revenues than others. As a general rule, the further I go through visualizations, the more technical of an audience I’m expecting, so I think using log10 is fine."
+  },
+  {
+    "objectID": "posts/bp8-final-changes/index.html#column-5",
+    "href": "posts/bp8-final-changes/index.html#column-5",
+    "title": "Arts Education Nonprofits Dashboard - Final",
+    "section": "Column",
+    "text": "Column\nThis pass, I cleaned up each plot based on feedback from Prof. Gopalan and edited labels while adding links to older versions of each plot!"
   }
 ]
