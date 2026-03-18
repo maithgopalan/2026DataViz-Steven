@@ -1,6 +1,7 @@
 ---
 title: "First Steps: Starting a Visualization Project"
 author: "Steven Todd McIntyre II"
+image: "header.jpg"
 date: "2026-02-18"
 runtime: shiny
 format: 

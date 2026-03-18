@@ -1,6 +1,7 @@
 ---
 title: "A25 Count vs State Population"
 author: "Steven Todd McIntyre II"
+image: "header.jpg"
 date: "2026-03-05"
 runtime: shiny
 format: 
@@ -129,16 +130,15 @@ a25_statepop |>
 
 ```
 
-
 # Summary of Updates
 
 ## Column
 
 The US heatmap, while fun to look at, more or less looked like a population heatmap. Rather than making the heatmap per capita, which takes a relatively layman-friendly format and adds more complexity, it seemed interesting to put together a visualization that showed the number of arts education nonprofits against the state population with a fit line to see which states were above or below the line.
 
-In this post, I did the following: 
+In this post, I did the following:
 
-- using the `usmaps` package, made a scatterplot of the population of each state vs. the number of arts education nonprofits in the state.
-- added labels to the scatterplot.
-- added an early filter setting to ensure I only captured currently active A25 orgs.
-- increased font size for org name words
+-   using the `usmaps` package, made a scatterplot of the population of each state vs. the number of arts education nonprofits in the state.
+-   added labels to the scatterplot.
+-   added an early filter setting to ensure I only captured currently active A25 orgs.
+-   increased font size for org name words

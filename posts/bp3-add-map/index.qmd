@@ -1,6 +1,7 @@
 ---
 title: "Add US Map Plot: Where are Arts Education Nonprofits?"
 author: "Steven Todd McIntyre II"
+image: "header.jpg"
 date: "2026-03-3"
 runtime: shiny
 format: 
@@ -109,14 +110,10 @@ ggplotly(a25_dist_map)
 
 ```
 
-
 # Summary of Updates
 
 ## Column
 
 Adding a first pass at a second visualization: a US heatmap of A25 nonprofits. It needs some desparate iteration--it's currently poorly-colored, doesn't particularly tell much of a story, and, like many USA heatmaps, is more of a population heatmap than actually looking at what I'm interested in. Can be changed in future iterations.
 
-In this post, I did the following:
-- installed the `usmaps` package.
-- got the package to work, counting the number of A25 arts education nonprofits in each state.
-- added a title.
+In this post, I did the following: - installed the `usmaps` package. - got the package to work, counting the number of A25 arts education nonprofits in each state. - added a title.

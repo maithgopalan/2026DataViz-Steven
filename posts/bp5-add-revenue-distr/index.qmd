@@ -1,6 +1,7 @@
 ---
 title: "How Much Money is in this, Anyway?"
 author: "Steven Todd McIntyre II"
+image: "header.jpg"
 date: "2026-03-08"
 runtime: shiny
 format: 
@@ -136,6 +137,7 @@ a25_statepop |>
 ```
 
 # Visualization 4: 2024 Arts Education Nonprofit Revenues
+
 ```{r}
 a25 |>
   ggplot(aes(x = F990_TOTAL_REVENUE_RECENT)) +
@@ -144,7 +146,6 @@ a25 |>
   theme_minimal()
 
 ```
-
 
 # Summary of Updates
 

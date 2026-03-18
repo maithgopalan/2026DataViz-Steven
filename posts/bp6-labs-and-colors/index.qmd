@@ -1,6 +1,7 @@
 ---
 title: "Labels and Colors"
 author: "Steven Todd McIntyre II"
+image: "header.jpg"
 date: "2026-03-10"
 runtime: shiny
 format: 
@@ -162,10 +163,10 @@ a25_statepop_scatter
 ggplotly(a25_statepop_scatter)
 ```
 
-
 # Visualization 4: 2024 Arts Education Nonprofit Revenues
 
 ## Column {.tabset}
+
 ```{r}
 #| title: "Log10 Distribution"
 # Make Distribution Beeswarm Plot

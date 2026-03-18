@@ -1,6 +1,7 @@
 ---
 title: "Word Counts: Landscape of Arts Education Nonprofits"
 author: "Steven Todd McIntyre II"
+image: "header.jpg"
 date: "2026-02-25"
 runtime: shiny
 format: 

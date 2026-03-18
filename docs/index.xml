@@ -10,7 +10,16 @@
 <atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Final Project for EDLD 652</description>
 <generator>quarto-1.8.25</generator>
-<lastBuildDate>Wed, 11 Mar 2026 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 16 Mar 2026 07:00:00 GMT</lastBuildDate>
+<item>
+  <title></title>
+  <dc:creator>Steven Todd McIntyre II</dc:creator>
+  <link>https://your-website-url.example.com/posts/bp8-final-changes/</link>
+  <description><![CDATA[ undefined ]]></description>
+  <guid>https://your-website-url.example.com/posts/bp8-final-changes/</guid>
+  <pubDate>Mon, 16 Mar 2026 07:00:00 GMT</pubDate>
+  <media:content url="https://your-website-url.example.com/posts/bp8-final-changes/header.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title></title>
   <dc:creator>Steven Todd McIntyre II</dc:creator>
@@ -18,6 +27,7 @@
   <description><![CDATA[ undefined ]]></description>
   <guid>https://your-website-url.example.com/posts/bp7-add-context/</guid>
   <pubDate>Wed, 11 Mar 2026 07:00:00 GMT</pubDate>
+  <media:content url="https://your-website-url.example.com/posts/bp7-add-context/header.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title></title>
@@ -26,6 +36,7 @@
   <description><![CDATA[ undefined ]]></description>
   <guid>https://your-website-url.example.com/posts/bp6-labs-and-colors/</guid>
   <pubDate>Tue, 10 Mar 2026 07:00:00 GMT</pubDate>
+  <media:content url="https://your-website-url.example.com/posts/bp6-labs-and-colors/header.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title></title>
@@ -34,6 +45,7 @@
   <description><![CDATA[ undefined ]]></description>
   <guid>https://your-website-url.example.com/posts/bp5-add-revenue-distr/</guid>
   <pubDate>Sun, 08 Mar 2026 08:00:00 GMT</pubDate>
+  <media:content url="https://your-website-url.example.com/posts/bp5-add-revenue-distr/header.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title></title>
@@ -42,6 +54,7 @@
   <description><![CDATA[ undefined ]]></description>
   <guid>https://your-website-url.example.com/posts/bp4-add-count-per-state/</guid>
   <pubDate>Thu, 05 Mar 2026 08:00:00 GMT</pubDate>
+  <media:content url="https://your-website-url.example.com/posts/bp4-add-count-per-state/header.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title></title>
@@ -50,6 +63,7 @@
   <description><![CDATA[ undefined ]]></description>
   <guid>https://your-website-url.example.com/posts/bp3-add-map/</guid>
   <pubDate>Tue, 03 Mar 2026 08:00:00 GMT</pubDate>
+  <media:content url="https://your-website-url.example.com/posts/bp3-add-map/header.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title></title>
@@ -58,50 +72,16 @@
   <description><![CDATA[ undefined ]]></description>
   <guid>https://your-website-url.example.com/posts/a25-word-count/</guid>
   <pubDate>Wed, 25 Feb 2026 08:00:00 GMT</pubDate>
+  <media:content url="https://your-website-url.example.com/posts/a25-word-count/header.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
-  <title>First Steps: Starting a Visualization Project</title>
+  <title></title>
   <dc:creator>Steven Todd McIntyre II</dc:creator>
   <link>https://your-website-url.example.com/posts/first-post-and-actions/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="visualization" class="level1">
-<h1>Visualization</h1>
-<p>This is a poor visualization to test embed-resources.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/first-post-and-actions/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="summary-of-updates" class="level1">
-<h1>Summary of Updates</h1>
-<section id="column" class="level2">
-<h2 class="anchored" data-anchor-id="column">Column</h2>
-<p>This is the first post in my final project’s Quarto blog, which documents the progress of my Arts Education Nonprofit Exploration digital dashboard. Each post will show iterations on my process.</p>
-<p>Welcome!</p>
-<p>Today, I took the following steps:</p>
-<ul>
-<li>I created this blog!</li>
-<li>I cleaned and uploaded data from the <a href="https://urbaninstitute.github.io/nccs/datasets/bmf/">Business Master File (BMF)</a>, including only data with an A25 (Arts Education) NTEE (National Taxonomy of Exempt Entities) code.</li>
-<li>I made a pretty bad visualization in order to test embed-resources</li>
-</ul>
-
-
-</section>
-</section>
-
- ]]></description>
+  <description><![CDATA[ undefined ]]></description>
   <guid>https://your-website-url.example.com/posts/first-post-and-actions/</guid>
   <pubDate>Wed, 18 Feb 2026 08:00:00 GMT</pubDate>
+  <media:content url="https://your-website-url.example.com/posts/first-post-and-actions/header.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

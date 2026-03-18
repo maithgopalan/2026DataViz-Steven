@@ -1,6 +1,7 @@
 ---
 title: "Presentation: Arts Education Nonprofit Landscape"
 author: "Steven Todd McIntyre II"
+image: "header.jpg"
 date: "2026-03-11"
 runtime: shiny
 format: 
@@ -36,7 +37,7 @@ library(ggbeeswarm)
 
 **How useful can NTEE Codes be in Studying Arts Education Nonprofits?**
 
-This dashboard will explore United States nonprofit organizations that are coded as "A25: Arts Education" in the National Taxonomy of Exempt Organizations (NTEE), a coding scheme that describes kinds of nonprofit organizations. "A25" is defined by the Urban Institute as "Organizations that provide informal arts educational programming and/or instruction but do not grant diplomas or degrees; or which offer services regarding the arts to educational institutions or to public entities involved in education." Using data from the [Urban Institute's Business Master File (BMF)](https://urbaninstitute.github.io/nccs/datasets/bmf/), I explore the kinds of organizations that define themselves as A25 and consider the NTEE classification's usefulness in exploring nonprofit arts education activities.
+This dashboard will explore United States nonprofit organizations that are coded as "A25: Arts Education" in the [National Taxonomy of Exempt Organizations (NTEE)](https://nccs.urban.org/nccs/pubs/ntee-two-page-2005.pdf), a coding scheme that describes kinds of nonprofit organizations. "A25" is defined by the Urban Institute as "Organizations that provide informal arts educational programming and/or instruction but do not grant diplomas or degrees; or which offer services regarding the arts to educational institutions or to public entities involved in education." Using data from the [Urban Institute's Business Master File (BMF)](https://urbaninstitute.github.io/nccs/datasets/bmf/), I explore the kinds of organizations that define themselves as A25 and consider the NTEE classification's usefulness in exploring nonprofit arts education activities.
 
 # Visualization 1: Arts Education Nonprofit Title Word Count
 
@@ -99,20 +100,20 @@ ggplotly(a25_top_50_plot)
 ```
 
 ## Sidebar {.sidebar}
-**Commentary**
-There are a number of NTEE codes under which nonprofits that engage in art education might land: 
+
+**Commentary** There are a number of NTEE codes under which nonprofits that engage in art education might land:
 
 -   A40: Visual Arts Orgs
 -   A50-57: Museums
 -   A60-A6F: Performing Arts Orgs
--   B*: Education Orgs
--   O*: Youth Development Orgs
+-   B\*: Education Orgs
+-   O\*: Youth Development Orgs
 
 Arts education exists underneath in wide capacities under these kinds of orgs. I wanted to know what kinds of organizations primarily code themselves as "A25: Arts Education" and this word count was very informative to that effect. I coded each word into a category based on the "kind" of word it is, and was surprised by "hooking," which represents a set of chapters of largely geriatric organizations committed to a form of rug-making.
 
-At this point, I started to realize that this landscape includes K-12 and postsecondary education, but also adult and continuing education organizations.
+At this point, I started to realize that this landscape includes K-12 and postsecondary education, but also adult and continuing education organizations. I also realized that my initial hope--comparing arts education nonprofit funding and activity with public arts education funding and activity--isn't as simple, on the nonprofit side, as filtering for NTEE_CODE == "A25" and calling it a day. There is a lot of complexity within and without "A25" that makes 1-1 comparisons of public and private funding in localities that focus only on "A25" incomplete at best, misleading at worst.
 
-**Process Notes: **
+**Process Notes:**
 
 This was one of the more challenging sets to wrangle data. I got used to the `tidytext` package, learned about so-called "stop words" (e.g., "a", "the", "of", etc.), and also learned about my data. Turns out, my dataset includes all data from all time so I had to filter for nonprofits that still exist.
 
@@ -142,6 +143,7 @@ ggplotly(a25_dist_map)
 ```
 
 ## Sidebar {.sidebar}
+
 **Commentary**
 
 I don't have as much to say here, as while this is a pretty-to-look-at representation of where these exist, it was relatively to implement (googling "how do I do x" seems to lead to easy-to-use packages, like, in this case, `usmap`) and is, unfortunately, pretty much a population heat map.
@@ -188,6 +190,7 @@ ggplotly(a25_statepop_scatter)
 ```
 
 ## Sidebar {.sidebar}
+
 **Commentary**
 
 This was fun to examine--looking at the population of states vs. count of arts education nonprofits in that state. I noticed a sort of political trend here, which wasn't exactly what I expected. Note that, above the fit line, most states are blue states, and below, most are red state.
@@ -198,7 +201,7 @@ I was a bit surprised by Puerto Rico being so low, but I wonder what the nonprof
 
 We talked a bit about how logs are not intuitive, and I tend to agree. However, the nature of my data let me to using them in this and my next visualization.
 
-Highlighting the most higher than expected and the most lower than expected seemed reasonable. 
+Highlighting the most higher than expected and the most lower than expected seemed reasonable.
 
 I have both a static version with labels, which is a bit loud but I really like to examine trends, and a `ggplotly` version with no labels that you can gover, which looks cleaner but isn't as easy to examine trends.
 
@@ -242,6 +245,7 @@ ggplotly(a25_rev_distr_lin)
 ```
 
 ## Sidebar {.sidebar}
+
 **Commentary**
 
 Counts of arts education nonprofits is fun, but I was curious about the spread of what kinds of *revenues* these organizations bring in. This could speak to their levels of impact.
