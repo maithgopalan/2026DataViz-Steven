@@ -268,7 +268,7 @@ Highlighting the most higher than expected and the most lower than expected seem
 
 I previously had a `ggplotly` version with no labels that you can hover to see the state, but decided against `ggplotly` for this one as the smaller text labels look rather nice.
 
-I also added annotations to explain the colors and changed the colors from red and green to red and blue to be more colorblind-accessible. It also has the added bonus of drawing subtle attention (without explicitly saying it) that those above the line tend to be blue states, those below tend to be red states.
+I also added annotations to explain the colors and changed the colors from red and green to red and blue to be more colorblind-accessible. It also has the added bonus of drawing subtle attention (without explicitly saying it) that those above the line tend to be blue states, those below tend to be red states. Finally, I added 
 
 # Visualization 4: 2024 Arts Education Nonprofit Revenues
 
@@ -313,7 +313,11 @@ ggplotly(a25_rev_distr_lin)
 ```
 ### Row
 
-Nonprofit data from the Urban Institute's Unified Business Master File (2024). Hover points for organization name. Note that `{r} nrow(a25 |> filter(F990_TOTAL_REVENUE_RECENT<=0))` out of `{r} nrow(a25)` total Arts Education organizations had a revenue of $0 or less in 2024 and are, therefore, excluded from the log10 distribution since log10 of any value less than or equal to zero is undefined.
+Nonprofit data from the Urban Institute's Unified Business Master File (2024).
+
+Hover points for organization name and precise revenue in 2024.
+
+Note that `{r} nrow(a25 |> filter(F990_TOTAL_REVENUE_RECENT<=0))` out of `{r} nrow(a25)` total arts education organizations reported a revenue of $0 or less in 2024 and are, therefore, excluded from the log10 distribution since log10 of any value less than or equal to zero is undefined.
 
 ## Sidebar {.sidebar}
 
